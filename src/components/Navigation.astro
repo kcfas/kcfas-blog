@@ -1,10 +1,23 @@
 ---
-
+const currentPath = Astro.url.pathname;
+const currentPathClass = "dark:text-stone-200 text-stone-700 underline";
 ---
 
-<nav>
-  <a href="/">Home</a>
-  <a href="/about/">About</a>
-  <a href="/blog/">Blog</a>
-  <a href="/tags/">Tags</a>
+<nav
+  class="flex items-center gap-4 text-xl font-semibold text-stone-400 dark:text-stone-400"
+>
+  <a href="/" class={currentPath === "/" ? `${currentPathClass}` : ""}>Home</a>
+  <a
+    href="/about/"
+    class={currentPath === "/about/" ? `${currentPathClass}` : ""}>About</a
+  >
+  <a href="/blog/" class={currentPath === "/blog/" ? `${currentPathClass}` : ""}
+    >Blog</a
+  >
+  <a
+    href="/tags/"
+    class={currentPath === "/tags/" || currentPath.startsWith("/posts/")
+      ? `${currentPathClass}`
+      : ""}>Tags</a
+  >
 </nav>

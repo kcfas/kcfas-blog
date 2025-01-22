@@ -1,9 +1,14 @@
 ---
+import HeaderTitle from "./HeaderTitle.astro";
 import Navigation from "./Navigation.astro";
 import ThemeToggle from "./ThemeToggle.astro";
 ---
 
-<header class="flex bg-red-500">
-  <Navigation />
+<header class="flex h-16 items-center justify-between border border-red-500">
+  <div class="mx-2 flex items-center gap-2">
+    <HeaderTitle titleText="KCFAS' BLOG" />
+    <span class="opacity-25">|</span>
+    <Navigation />
+  </div>
   <ThemeToggle />
 </header>
